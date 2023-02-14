@@ -2,9 +2,7 @@
 
 "use strict";
 
-let randomDice;
-let activePlayer = 0;
-let currentScore = 0;
+let randomDice, activePlayer, currentScore;
 const scores = [0, 0];
 
 const scoreTotalPlayer1 = document.querySelector("#score--0");
@@ -26,7 +24,7 @@ const switchPlayer = function () {
     currentScore = 0;
 };
 
-const newGame = function () {
+const init = function () {
     // Reset score to 0
     scoreTotalPlayer1.textContent = 0;
     scoreTotalPlayer2.textContent = 0;
@@ -59,10 +57,10 @@ const newGame = function () {
     currentScore = 0;
 };
 
-newGame();
+init();
 
 // New game
-btnNewGame.addEventListener("click", newGame);
+btnNewGame.addEventListener("click", init);
 
 // Roll dice
 btnRollDice.addEventListener("click", function () {
